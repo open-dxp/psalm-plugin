@@ -9,7 +9,7 @@
     },
     "require-dev": {
         "open-dxp/opendxp": "^1.4",
-        "pestphp/pest": "^4.7"
+        "pestphp/pest": "^5.3"
     },
     "conflict": {
         "open-dxp/opendxp": ">=2.0"
