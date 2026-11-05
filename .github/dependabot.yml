@@ -4,8 +4,12 @@ updates:
         directory: /
         schedule:
             interval: weekly
+        labels:
+            - no changelog
 
     -   package-ecosystem: composer
         directory: /
         schedule:
             interval: weekly
+        labels:
+            - no changelog
