@@ -25,6 +25,6 @@ jobs:
 
             -   uses: ramsey/composer-install@v4
                 with:
-                    composer-options: '--ignore-platform-reqs'
+                    composer-options: '--ignore-platform-req=ext-*'
 
             -   run: vendor/bin/pest
