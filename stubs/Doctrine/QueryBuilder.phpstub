@@ -1,0 +1,24 @@
+<?php
+
+namespace Doctrine\DBAL\Query;
+
+class QueryBuilder
+{
+    /** @psalm-taint-sink sql $predicates */
+    public function where($predicates) {}
+
+    /** @psalm-taint-sink sql $where */
+    public function andWhere($where) {}
+
+    /** @psalm-taint-sink sql $where */
+    public function orWhere($where) {}
+
+    /** @psalm-taint-sink sql $having */
+    public function having($having) {}
+
+    /** @psalm-taint-sink sql $having */
+    public function andHaving($having) {}
+
+    /** @psalm-taint-sink sql $having */
+    public function orHaving($having) {}
+}

@@ -1,0 +1,35 @@
+<?php
+
+namespace Doctrine\DBAL;
+
+use Doctrine\DBAL\Cache\QueryCacheProfile;
+
+class Connection
+{
+    /** @psalm-taint-sink sql $sql */
+    public function executeQuery(string $sql, array $params = [], $types = [], ?QueryCacheProfile $qcp = null): Result {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchAssociative(string $query, array $params = [], array $types = []) {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchNumeric(string $query, array $params = [], array $types = []) {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchOne(string $query, array $params = [], array $types = []) {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchAllNumeric(string $query, array $params = [], array $types = []): array {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchAllAssociative(string $query, array $params = [], array $types = []): array {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchAllKeyValue(string $query, array $params = [], array $types = []): array {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchAllAssociativeIndexed(string $query, array $params = [], array $types = []): array {}
+
+    /** @psalm-taint-sink sql $query */
+    public function fetchFirstColumn(string $query, array $params = [], array $types = []): array {}
+}

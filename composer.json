@@ -1,0 +1,36 @@
+{
+    "name": "open-dxp/psalm-plugin",
+    "type": "psalm-plugin",
+    "license": "GPL-3.0-or-later",
+    "description": "Psalm knows where OpenDXP takes SQL and serialized data, and reports untrusted input that reaches it.",
+    "require": {
+        "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
+        "vimeo/psalm": "^7.0"
+    },
+    "require-dev": {
+        "open-dxp/opendxp": "^1.4",
+        "pestphp/pest": "^4.7"
+    },
+    "conflict": {
+        "open-dxp/opendxp": ">=2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenDxp\\PsalmPlugin\\": "src/"
+        }
+    },
+    "extra": {
+        "psalm": {
+            "pluginClass": "OpenDxp\\PsalmPlugin\\Plugin"
+        },
+        "branch-alias": {
+            "dev-1.x": "1.0.x-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable"
+}

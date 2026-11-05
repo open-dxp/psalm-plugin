@@ -1,0 +1,11 @@
+<?php
+
+namespace OpenDxp\Tool;
+
+class Serialize
+{
+    /**
+     * @psalm-taint-sink unserialize $data
+     */
+    public static function unserialize(?string $data = null, array $options = []): mixed {}
+}

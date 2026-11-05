@@ -1,0 +1,16 @@
+<?php
+
+namespace OpenDxp\Model\Listing;
+
+abstract class AbstractListing
+{
+    /**
+     * @psalm-taint-sink sql $condition
+     */
+    public function setCondition(string $condition, float|array|bool|int|string|null $conditionVariables = null): static {}
+
+    /**
+     * @psalm-taint-sink sql $condition
+     */
+    public function addConditionParam(string $condition, mixed $value = null, string $concatenator = 'AND'): static {}
+}

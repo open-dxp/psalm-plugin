@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - "[0-9]+.[0-9]+"
+            - "[0-9]+.x"
+    pull_request:
+        types: [ opened, synchronize, reopened ]
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                php: [ '8.3', '8.4', '8.5' ]
+        steps:
+            -   uses: actions/checkout@v7
+
+            -   uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    coverage: none
+
+            -   uses: ramsey/composer-install@v4
+                with:
+                    composer-options: '--ignore-platform-reqs'
+
+            -   run: vendor/bin/pest

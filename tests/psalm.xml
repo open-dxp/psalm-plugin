@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<psalm xmlns="https://getpsalm.org/schema/config" findUnusedCode="false">
+    <projectFiles>
+        <directory name="Fixtures"/>
+    </projectFiles>
+    <plugins>
+        <pluginClass class="OpenDxp\PsalmPlugin\Plugin"/>
+    </plugins>
+</psalm>
